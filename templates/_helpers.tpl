@@ -41,7 +41,7 @@ helm.sh/chart: {{ include "simple-app.chart" . }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
-Team: kfirlele
+team: kfirlele
 {{- end -}}
 
 
@@ -51,6 +51,7 @@ Selector labels
 {{- define "simple-app.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "simple-app.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
+team: kfirlele
 {{- end -}}
 
 {{/*
